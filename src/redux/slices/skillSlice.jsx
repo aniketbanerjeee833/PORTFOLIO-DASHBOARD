@@ -101,7 +101,7 @@ export const getAllSkills=()=>async(dispatch)=>
     {
         dispatch(skillSlice.actions.getAllSkillsRequest())
         try{
-            const response=await axios.get("http://localhost:3000/api/v1/skill/getall",{
+            const response=await axios.get("https://portfolio-backend-td74.onrender.com/api/v1/skill/getall",{
                 withCredentials:true
             })
             dispatch(skillSlice.actions.getAllSkillsSuccess(response?.data?.skill))
@@ -117,7 +117,7 @@ export const getAllSkills=()=>async(dispatch)=>
         {
             dispatch(skillSlice.actions.deleteSkillsRequest())
             try{
-                const response=await axios.delete(`http://localhost:3000/api/v1/skill/delete/${id}`,{
+                const response=await axios.delete(`https://portfolio-backend-td74.onrender.com/api/v1/skill/delete/${id}`,{
                     withCredentials:true
                 })
                 dispatch(skillSlice.actions.deleteSkillsSuccess(response?.data?.message))
@@ -136,7 +136,7 @@ export const getAllSkills=()=>async(dispatch)=>
             dispatch(skillSlice.actions.addNewSkillRequest())
             try{
 
-                const response=await axios.post(`http://localhost:3000/api/v1/skill/add`,newData,{
+                const response=await axios.post(`https://portfolio-backend-td74.onrender.com/api/v1/skill/add`,newData,{
                     withCredentials:true,
                     headers: { "Content-Type": "multipart/form-data" },
                 })
@@ -157,7 +157,7 @@ export const getAllSkills=()=>async(dispatch)=>
                 dispatch(skillSlice.actions.updateSkillRequest())
                 try{
     
-                    const response=await axios.put(`http://localhost:3000/api/v1/skill/update/${id}`,    { proficiency },{
+                    const response=await axios.put(`https://portfolio-backend-td74.onrender.com/api/v1/skill/update/${id}`,    { proficiency },{
                         withCredentials:true,
                         headers: { "Content-Type": "application/json" },
                     })

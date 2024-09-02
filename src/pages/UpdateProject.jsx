@@ -35,7 +35,7 @@ export default function UpdateProject() {
     try {
 
 
-      const response = await axios.get(`http://localhost:3000/api/v1/project/get/${id}`, {
+      const response = await axios.get(`https://portfolio-backend-td74.onrender.com/api/v1/project/get/${id}`, {
         withCredentials: true
       })
 

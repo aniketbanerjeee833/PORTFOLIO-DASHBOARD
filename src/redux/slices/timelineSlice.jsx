@@ -81,7 +81,7 @@ export const getAllTimeline=()=>async(dispatch)=>
     {
         dispatch(timelineSlice.actions.getAllTimelineRequest())
         try{
-            const response=await axios.get("http://localhost:3000/api/v1/timeline/getall",{
+            const response=await axios.get("https://portfolio-backend-td74.onrender.com/api/v1/timeline/getall",{
                 withCredentials:true
             })
             dispatch(timelineSlice.actions.getAllTimelineSuccess(response?.data?.timeline))
@@ -97,7 +97,7 @@ export const getAllTimeline=()=>async(dispatch)=>
         {
             dispatch(timelineSlice.actions.deleteTimelineRequest())
             try{
-                const response=await axios.delete(`http://localhost:3000/api/v1/timeline/delete/${id}`,{withCredentials:true})
+                const response=await axios.delete(`https://portfolio-backend-td74.onrender.com/api/v1/timeline/delete/${id}`,{withCredentials:true})
                 console.log(response)
                 dispatch(timelineSlice.actions.deleteTimelineSuccess(response?.data?.message))
                 dispatch(timelineSlice.actions.clearAllErrors())
@@ -115,7 +115,7 @@ export const getAllTimeline=()=>async(dispatch)=>
             dispatch(timelineSlice.actions.addNewTimelineRequest())
             try{
 
-                const response=await axios.post(`http://localhost:3000/api/v1/timeline/add`,data,{
+                const response=await axios.post(`https://portfolio-backend-td74.onrender.com/api/v1/timeline/add`,data,{
                     withCredentials:true,
                     headers: { "Content-Type": "application/json" },
                 })

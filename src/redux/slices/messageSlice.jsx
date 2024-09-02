@@ -60,7 +60,7 @@ export const getAllMessages=()=>async(dispatch)=>
 {
     dispatch(messageSlice.actions.getAllMessageRequest())
     try{
-        const response=await axios.get("http://localhost:3000/api/v1/message/getall",{withCredentials:true})
+        const response=await axios.get("https://portfolio-backend-td74.onrender.com/api/v1/message/getall",{withCredentials:true})
         console.log(response)
         dispatch(messageSlice.actions.getAllMessageSuccess(response.data.messages))
         dispatch(messageSlice.actions.clearAllErrors())
@@ -75,7 +75,7 @@ export const deleteMessage=(id)=>async(dispatch)=>
     {
         dispatch(messageSlice.actions.deleteMessageRequest())
         try{
-            const response =await axios.delete(`http://localhost:3000/api/v1/message/delete/${id}`,{
+            const response =await axios.delete(`https://portfolio-backend-td74.onrender.com/api/v1/message/delete/${id}`,{
                 withCredentials:true
             })
             console.log(response)

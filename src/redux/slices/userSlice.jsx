@@ -133,7 +133,7 @@ export const login=(email,password)=>async(dispatch)=>
     dispatch(userSlice.actions.loginRequest())
     console.log("hello")
     try{
-        const response=await axios.post("http://localhost:3000/api/v1/user/login",{email,password},   
+        const response=await axios.post("https://portfolio-backend-td74.onrender.com/api/v1/user/login",{email,password},   
           { withCredentials: true, headers: { "Content-Type": "application/json" } 
         })
         //console.log(response)
@@ -148,7 +148,7 @@ export const login=(email,password)=>async(dispatch)=>
 export const getUser = () => async (dispatch) => {
     dispatch(userSlice.actions.loadUserRequest());
     try {
-      const response = await axios.get("http://localhost:3000/api/v1/user/me", {
+      const response = await axios.get("https://portfolio-backend-td74.onrender.com/api/v1/user/me", {
         withCredentials: true,
       });
       //console.log(response)
@@ -162,7 +162,7 @@ export const getUser = () => async (dispatch) => {
 export const logout=()=>async(dispatch)=>
     {
         try{
-            const response=await axios.get("http://localhost:3000/api/v1/user/logout",{
+            const response=await axios.get("https://portfolio-backend-td74.onrender.com/api/v1/user/logout",{
                 withCredentials:true
             })
             console.log(response)
@@ -180,7 +180,7 @@ export const logout=()=>async(dispatch)=>
       dispatch(userSlice.actions.updatePasswordRequest());
       try {
         const response = await axios.put(
-          "http://localhost:3000/api/v1/user/update/password",
+          "https://portfolio-backend-td74.onrender.com/api/v1/user/update/password",
           { currentPassword, newPassword, confirmNewPassword },
           {
             withCredentials: true,
@@ -199,7 +199,7 @@ export const logout=()=>async(dispatch)=>
     export const updateProfile = (newData) => async (dispatch) => {
         dispatch(userSlice.actions.updateProfileRequest());
         try {
-          const response = await axios.put("http://localhost:3000/api/v1/user/update/profile",newData,
+          const response = await axios.put("https://portfolio-backend-td74.onrender.com/api/v1/user/update/profile",newData,
             {
               withCredentials: true,
               headers: { "Content-Type": "multipart/form-data" },

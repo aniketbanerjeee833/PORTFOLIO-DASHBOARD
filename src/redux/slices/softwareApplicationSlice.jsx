@@ -80,7 +80,7 @@ export const getAllSoftwareApplications=()=>async(dispatch)=>
     {
         dispatch(softwareApplicationSlice.actions.getAllSoftwareApplicationsRequest())
         try{
-            const response =await axios.get("http://localhost:3000/api/v1/softwareapplication/getall",{
+            const response =await axios.get("https://portfolio-backend-td74.onrender.com/api/v1/softwareapplication/getall",{
                 withCredentials:true
             })
             console.log(response)
@@ -97,7 +97,7 @@ export const getAllSoftwareApplications=()=>async(dispatch)=>
         {
             dispatch(softwareApplicationSlice.actions.deleteNewSoftwareApplicationRequest())
             try{
-                const response=await axios.delete(`http://localhost:3000/api/v1/softwareapplication/delete/${id}`,{
+                const response=await axios.delete(`https://portfolio-backend-td74.onrender.com/api/v1/softwareapplication/delete/${id}`,{
                     withCredentials:true
                 })
                 dispatch(softwareApplicationSlice.actions.deleteNewSoftwareApplicationSuccess(response?.data.message))
@@ -116,7 +116,7 @@ export const getAllSoftwareApplications=()=>async(dispatch)=>
             dispatch(softwareApplicationSlice.actions.addNewSoftwareApplicationRequest())
             try{
 
-                const response=await axios.post(`http://localhost:3000/api/v1/softwareapplication/add`,newData,{
+                const response=await axios.post(`https://portfolio-backend-td74.onrender.com/api/v1/softwareapplication/add`,newData,{
                     withCredentials:true,
                     headers: { "Content-Type": "multipart/form-data" },
                 })
